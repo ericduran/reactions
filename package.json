@@ -1,0 +1,16 @@
+{
+  "name": "reactions",
+  "version": "0.0.1",
+  "description": "A reactions service & client",
+  "main": "src/server.js",
+  "repository": "git@github.com:ericduran/reactions.git",
+  "author": "Eric J. Duran <eric@ejd.email>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "^1.3.3",
+    "express": "^4.16.2"
+  }
+}
