@@ -1,5 +1,5 @@
 /**
- * Served under the /api/* route path.
+ * Served under the /a/* route path.
  */
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -70,16 +70,19 @@ router.get('/reactions/tag/:tag', function (req, res) {
 });
 
 /**
- * The incromenet ID does nothing but update the count by 1.
+ * Increment/Decrement ID.
  *
- * If it's a group then we also need the key for the item.
+ * I might not allow decrementing on the 1st pass lol
+ * Doesn't really meet MVP - :joy:
  * ex. key: "heart" || "smile"
  */
 router.post('/reactions/:id', (req, res) => {
   // If the entity is of type item, we only need to increment the single
   // item in the set.
   const id = req.params.id;
-  const key = req.params.key;
+  // key & action will be in the body.
+  // key = [heart, thumbsUp, etc...]
+  // action = increment || decrement
 
   // If it fails, return non 200, but our client will swallow the error,
   // no point in letting the user know but we'll log it.
