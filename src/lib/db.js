@@ -7,7 +7,7 @@ const datastore = require('@google-cloud/datastore');
 
 // TODO: Need to read more about datastore to figure out how to
 // optimize my data structure.
-class DB {
+class db {
   constructor() {
     // todo: Move projectID into env?
     this.db = new datastore({ projectId: 'reactions-ejd' });
@@ -19,4 +19,4 @@ class DB {
   decrement(key) {}
 }
 
-module.exports = DB;
+module.exports = db;
